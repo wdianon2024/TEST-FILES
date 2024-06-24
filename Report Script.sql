@@ -24,7 +24,7 @@ END;
 ---------------------------------------------------------------------------------
 BEGIN
     Employee_Management.Adjust_Employee_Salary(
-        p_Employee_Id => 90011,  -- Assuming 90011 is a valid Employee_Id
+        p_Employee_Id => 90011,  
         p_Percentage => 20       -- Increase salary by 20%
     );
 END;
@@ -33,7 +33,7 @@ END;
 -- Call the Adjust_Employee_Salary procedure to decrease the salary by 15%
 BEGIN
     Employee_Management.Adjust_Employee_Salary(
-        p_Employee_Id => 90011,  -- Assuming 900011 is a valid Employee_Id
+        p_Employee_Id => 90011,  
         p_Percentage => -15      -- Decrease salary by 15%
     );
 END;
@@ -45,8 +45,8 @@ END;
 ---------------------------------------------------------------------------------
 BEGIN
     Employee_Management.Transfer_Employee_Department(
-        p_Employee_Id => 90011,       -- Assuming 900011 is a valid Employee_Id
-        p_New_Department_Id => 2      -- Transfer to department 2
+        p_Employee_Id => 90010,       
+        p_New_Department_Id => 2      
     );
 END;
 /
@@ -58,7 +58,7 @@ END;
 DECLARE
     v_Salary Employees.Salary%TYPE;
 BEGIN
-    v_Salary := Employee_Management.Get_Employee_Salary(90011); -- Assuming 900011 is a valid Employee_Id
+    v_Salary := Employee_Management.Get_Employee_Salary(90011); 
     DBMS_OUTPUT.PUT_LINE('The salary of employee 900011 is ' || v_Salary);
 END;
 /

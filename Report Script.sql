@@ -24,7 +24,7 @@ END;
 ---------------------------------------------------------------------------------
 BEGIN
     Employee_Management.Adjust_Employee_Salary(
-        p_Employee_Id => 90011,  -- Assuming 90002 is a valid Employee_Id
+        p_Employee_Id => 90011,  -- Assuming 90011 is a valid Employee_Id
         p_Percentage => 20       -- Increase salary by 20%
     );
 END;
@@ -33,7 +33,7 @@ END;
 -- Call the Adjust_Employee_Salary procedure to decrease the salary by 15%
 BEGIN
     Employee_Management.Adjust_Employee_Salary(
-        p_Employee_Id => 90011,  -- Assuming 90003 is a valid Employee_Id
+        p_Employee_Id => 90011,  -- Assuming 900011 is a valid Employee_Id
         p_Percentage => -15      -- Decrease salary by 15%
     );
 END;
@@ -45,7 +45,7 @@ END;
 ---------------------------------------------------------------------------------
 BEGIN
     Employee_Management.Transfer_Employee_Department(
-        p_Employee_Id => 900011,       -- Assuming 90003 is a valid Employee_Id
+        p_Employee_Id => 90011,       -- Assuming 900011 is a valid Employee_Id
         p_New_Department_Id => 2      -- Transfer to department 2
     );
 END;
@@ -58,30 +58,23 @@ END;
 DECLARE
     v_Salary Employees.Salary%TYPE;
 BEGIN
-    v_Salary := Employee_Management.Get_Employee_Salary(90003); -- Assuming 90003 is a valid Employee_Id
-    DBMS_OUTPUT.PUT_LINE('The salary of employee 90003 is ' || v_Salary);
+    v_Salary := Employee_Management.Get_Employee_Salary(90011); -- Assuming 900011 is a valid Employee_Id
+    DBMS_OUTPUT.PUT_LINE('The salary of employee 900011 is ' || v_Salary);
 END;
 /
 
 ---------------------------------------------------------------------------------
 -- Report_Employees_By_Department 
 ---------------------------------------------------------------------------------
---Enable DBMS_OUTPUT
-SET SERVEROUTPUT ON;
-
 -- Call the Report_Employees_By_Department procedure to generate a report for department 2
 BEGIN
     Employee_Management.Report_Employees_By_Department(p_Department_Id => 2);
 END;
 /
 
-
 ---------------------------------------------------------------------------------
 -- Total_Salary_By_Department  
 ---------------------------------------------------------------------------------
--- Enable DBMS_OUTPUT
-SET SERVEROUTPUT ON;
-
 -- Call the Total_Salary_By_Department procedure to calculate the total salary for department 2
 BEGIN
     Employee_Management.Total_Salary_By_Department(p_Department_Id => 2);

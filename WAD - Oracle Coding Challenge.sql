@@ -195,7 +195,7 @@ Prerequisites
 
 		
 		------------------------------------------------------
-		-- 4.4 EMPLOYEE SALARY PROCEDURE :  a stored procedure to transfer an employee to a different department
+		-- 4.4 EMPLOYEE SALARY FUNCTION :  a stored procedure to transfer an employee to a different department
 		------------------------------------------------------ 
 		FUNCTION Get_Employee_Salary (p_Employee_Id IN Employees.Employee_Id%TYPE
 									) RETURN Employees.Salary%TYPE
